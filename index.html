@@ -50,10 +50,6 @@
       cursor: crosshair;
     }
 
-    body {
-      padding-bottom: 52px;
-    }
-
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0;
@@ -300,7 +296,7 @@
     }
 
     .hero-cta {
-      margin-top: 28px;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -628,15 +624,14 @@
     }
 
     .footer-strip {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
+      position: relative;
       background: var(--pink);
       border-top: 3px solid var(--ink);
-      padding: 7px 20px;
+      padding: 8px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 20;
+      z-index: 1;
       overflow: hidden;
     }
     .marquee-track {
