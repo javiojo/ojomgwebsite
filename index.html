@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OjO Marketing Group | AI, Websites and Marketing</title>
-  <meta name="description" content="OjO Marketing Group is a bilingual (EN/ES) marketing team in Puerto Rico. We offer AI integration and automation, websites, branding, social media, Google Ads, printing and Google Workspace business email.">
+  <title>OjO Marketing Group | AI, Web Design y mercadeo</title>
+  <meta name="description" content="OjO Marketing Group es un equipo de mercadeo bilingüe (ES/EN) en Puerto Rico. Ofrecemos AI integration and automation, Web Design, branding, Social Media, Google Ads, impresos y correo de Google Workspace.">
   <meta name="theme-color" content="#0A0A12">
   <link rel="canonical" href="https://ojomg.com/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="OjO Marketing Group">
-  <meta property="og:description" content="A bilingual marketing team in Puerto Rico: AI and automation, websites, branding and Google Workspace. Hablamos español.">
+  <meta property="og:description" content="Equipo de mercadeo bilingüe en Puerto Rico: AI y automatización, Web Design, branding y Google Workspace.">
   <meta property="og:url" content="https://ojomg.com/">
   <meta property="og:image" content="https://ojomg.com/assets/logo.png">
   <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Nunito:wght@700;900&display=swap" rel="stylesheet"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"OjO Marketing Group","url":"https://ojomg.com/","telephone":"+1-787-448-9030","email":"info@ojomg.com","address":{"@type":"PostalAddress","addressRegion":"PR","addressCountry":"US"},"description":"Bilingual (English/Spanish) marketing team in Puerto Rico offering AI integration and automation, websites, branding and Google Workspace.","knowsLanguage":["en","es"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"OjO Marketing Group","url":"https://ojomg.com/","telephone":"+1-787-448-9030","email":"info@ojomg.com","address":{"@type":"PostalAddress","addressRegion":"PR","addressCountry":"US"},"description":"Equipo de mercadeo bilingüe (español/inglés) en Puerto Rico que ofrece AI integration and automation, Web Design, branding y Google Workspace.","knowsLanguage":["es","en"]}
   </script>
   <style>
     :root {
@@ -223,53 +223,13 @@
       to   { transform: scale(1) rotate(0deg);   opacity: 1; }
     }
 
-    .bubble-wrap {
-      position: relative;
-      margin: 14px 0 0;
-      animation: slide-up 0.6s 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
     @keyframes slide-up {
       from { transform: translateY(40px); opacity: 0; }
       to   { transform: translateY(0);    opacity: 1; }
     }
-    .bubble {
-      position: relative;
-      background: var(--yellow);
-      border: 4px solid var(--ink);
-      border-radius: 18px;
-      padding: 12px 28px 10px;
-      text-align: center;
-      box-shadow: 6px 6px 0 var(--ink);
-    }
-    .bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -22px; left: 50%; transform: translateX(-50%);
-      width: 0; height: 0;
-      border-left: 14px solid transparent;
-      border-right: 14px solid transparent;
-      border-top: 22px solid var(--ink);
-    }
-    .bubble::before {
-      content: '';
-      position: absolute;
-      bottom: -16px; left: 50%; transform: translateX(-50%);
-      width: 0; height: 0;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-top: 18px solid var(--yellow);
-      z-index: 1;
-    }
-    .bubble-text {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(22px, 5vw, 36px);
-      color: var(--ink);
-      letter-spacing: 2px;
-      line-height: 1;
-    }
 
     .headline-panel {
-      margin-top: 36px;
+      margin-top: 16px;
       background: var(--dark);
       border: 4px solid var(--cyan);
       border-radius: 12px;
@@ -563,13 +523,6 @@
       margin-bottom: 1rem;
     }
     .about-panel p:last-child { margin-bottom: 0; }
-    .about-es {
-      background: rgba(13,13,13,0.18);
-      border: 3px solid var(--ink);
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
-      margin-top: 0.4rem;
-    }
 
     /* Contact */
     .contact-box {
@@ -682,26 +635,26 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .burst, .logo-img, .bubble-wrap, .headline-panel, .hero-cta, .google-badge,
+      .burst, .logo-img, .headline-panel, .hero-cta, .google-badge,
       .zap-icon, .marquee-track, .pop-dot { animation: none !important; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#services" data-i18n="skip">Skip to services</a>
+  <a class="skip" href="#services" data-i18n="skip">Saltar a servicios</a>
 
   <header class="nav-bar">
     <div class="nav-inner">
       <a class="nav-logo" href="#top">
         <img src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
       </a>
-      <nav class="nav-links" aria-label="Main">
-        <a href="#services" data-i18n="navServices">Services</a>
-        <a href="#about" data-i18n="navAbout">About</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button type="button" id="btn-en" aria-pressed="true" data-lang="en">EN</button>
-          <button type="button" id="btn-es" aria-pressed="false" data-lang="es">ES</button>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#services" data-i18n="navServices">Servicios</a>
+        <a href="#about" data-i18n="navAbout">Nosotros</a>
+        <a href="#contact" data-i18n="navContact">Contacto</a>
+        <div class="lang-toggle" role="group" aria-label="Idioma">
+          <button type="button" id="btn-en" aria-pressed="false" data-lang="en">EN</button>
+          <button type="button" id="btn-es" aria-pressed="true" data-lang="es">ES</button>
         </div>
       </nav>
     </div>
@@ -713,15 +666,9 @@
       <img class="logo-img" src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
     </div>
 
-    <div class="bubble-wrap">
-      <div class="bubble">
-        <span class="bubble-text">Hablamos español</span>
-      </div>
-    </div>
-
     <div class="headline-panel">
-      <h1 data-i18n="heroTitle">AI, websites and marketing for your business.</h1>
-      <p class="lead" data-i18n="heroLead">We help local businesses save time and grow — with AI and automation, plus the websites, branding and marketing to put them to work.</p>
+      <h1 data-i18n="heroTitle">AI, Web Design y mercadeo para su negocio.</h1>
+      <p class="lead" data-i18n="heroLead">Ayudamos a los negocios locales a ahorrar tiempo y crecer — con AI y automatización, y con Web Design, la marca y el mercadeo para ponerlos a trabajar.</p>
     </div>
 
     <p class="hero-cta">
@@ -729,11 +676,11 @@
         <span class="phone-icon" aria-hidden="true">&#x1F4DE;</span>
         787-448-9030
       </a>
-      <a class="btn-link" href="#services" data-i18n="seeServices">See what we do <span aria-hidden="true">&rarr;</span></a>
+      <a class="btn-link" href="#services" data-i18n="seeServices">Vea lo que hacemos <span aria-hidden="true">&rarr;</span></a>
     </p>
 
     <div class="google-badge">
-      <span class="badge-label" data-i18n="reseller">Authorized Reseller</span>
+      <span class="badge-label" data-i18n="reseller">Revendedor autorizado</span>
       <div class="g-dots" aria-hidden="true">
         <div class="g-dot"></div>
         <div class="g-dot"></div>
@@ -752,14 +699,14 @@
           <span class="zap-icon">&#x26A1;</span>
           <div class="zap-line"></div>
         </div>
-        <p class="eyebrow" data-i18n="servicesEyebrow">Services</p>
-        <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Put AI and automation to work for your business.</h2>
+        <p class="eyebrow" data-i18n="servicesEyebrow">Servicios</p>
+        <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Ponga AI y la automatización a trabajar en su negocio.</h2>
 
         <article class="feature">
           <div>
-            <p class="tag" data-i18n="ourFocus">Our focus</p>
+            <p class="tag" data-i18n="ourFocus">Nuestro enfoque</p>
             <h3 data-i18n="aiTitle">AI Integration &amp; Automation</h3>
-            <p class="feature-copy" data-i18n="aiCopy">We help you use AI and automation to cut busywork, save time and grow. We find where it will actually pay off, then build it and set it up so your team can use it from day one.</p>
+            <p class="feature-copy" data-i18n="aiCopy">Le ayudamos a usar AI y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.</p>
           </div>
           <ul class="feature-list">
             <li data-i18n="aiBullet1">AI chat and assistants</li>
@@ -767,22 +714,22 @@
             <li data-i18n="aiBullet3">CRM and email automation</li>
             <li data-i18n="aiBullet4">AI-powered marketing</li>
           </ul>
-          <a class="btn-ink" href="#contact" data-i18n="startAi">Start with AI</a>
+          <a class="btn-ink" href="#contact" data-i18n="startAi">Empezar con AI</a>
         </article>
 
-        <h3 class="sub" data-i18n="supporting">Supporting services</h3>
+        <h3 class="sub" data-i18n="supporting">Otros servicios</h3>
         <ul class="grid">
-          <li class="card"><span class="num" aria-hidden="true">01</span><h3 data-i18n="s1t">Websites</h3><p data-i18n="s1d">Fast, mobile-first websites that look sharp and help turn visitors into customers.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">02</span><h3 data-i18n="s2t">Custom Web Apps</h3><p data-i18n="s2d">Custom web apps, portals and dashboards built around how your business actually works.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">03</span><h3 data-i18n="s3t">SEO</h3><p data-i18n="s3d">Search engine optimization so customers can find you on Google — and so you keep climbing.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">04</span><h3 data-i18n="s4t">Google Ads</h3><p data-i18n="s4d">Search ads built around your budget, so you show up when people are ready to buy.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">05</span><h3 data-i18n="s5t">Advertising</h3><p data-i18n="s5d">Campaigns across search, social, TV, radio and print that put your brand in front of the right people.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">06</span><h3 data-i18n="s6t">Media Planning</h3><p data-i18n="s6d">We help choose where and when your ads run, so every dollar reaches the customers who matter.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">07</span><h3 data-i18n="s7t">Marketing Consulting</h3><p data-i18n="s7d">Clear strategy and an honest outside view to help you decide what to do next, and why.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">08</span><h3 data-i18n="s8t">Branding &amp; Logo Design</h3><p data-i18n="s8d">Logos and brand identities that make your business easy to recognize and hard to forget.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">09</span><h3 data-i18n="s9t">Social Media</h3><p data-i18n="s9d">Consistent, on-brand content that builds an audience and keeps you top of mind.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">10</span><h3 data-i18n="s10t">Printing &amp; Signs</h3><p data-i18n="s10d">Business cards, flyers, banners and signage that carry your brand offline.</p></li>
-          <li class="card"><span class="num" aria-hidden="true">11</span><h3 data-i18n="s11t">Google Workspace Business Email</h3><p data-i18n="s11d">Professional email at your own domain, set up and ready to use. We are an authorized Google Workspace reseller.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">01</span><h3 data-i18n="s1t">Web Design</h3><p data-i18n="s1d">Sitios rápidos y pensados para el celular, con un diseño nítido que ayuda a convertir visitantes en clientes.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">02</span><h3 data-i18n="s2t">Aplicaciones web a la medida</h3><p data-i18n="s2d">Aplicaciones, portales y paneles hechos a la medida de cómo funciona su negocio.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">03</span><h3 data-i18n="s3t">SEO</h3><p data-i18n="s3d">Optimización en buscadores para que los clientes lo encuentren en Google — y para que siga subiendo.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">04</span><h3 data-i18n="s4t">Google Ads</h3><p data-i18n="s4d">Anuncios de búsqueda ajustados a su presupuesto, para aparecer cuando las personas ya están listas para comprar.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">05</span><h3 data-i18n="s5t">Publicidad</h3><p data-i18n="s5d">Campañas en búsqueda, redes, televisión, radio e impresos que ponen su marca frente a las personas indicadas.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">06</span><h3 data-i18n="s6t">Planificación de medios</h3><p data-i18n="s6d">Ayudamos a decidir dónde y cuándo salen sus anuncios, para que cada dólar llegue a los clientes que importan.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">07</span><h3 data-i18n="s7t">Consultoría de mercadeo</h3><p data-i18n="s7d">Una estrategia clara y una mirada honesta de afuera para decidir qué sigue, y por qué.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">08</span><h3 data-i18n="s8t">Marca y diseño de logotipo</h3><p data-i18n="s8d">Logotipos e identidades de marca que hacen su negocio fácil de reconocer y difícil de olvidar.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">09</span><h3 data-i18n="s9t">Social Media</h3><p data-i18n="s9d">Contenido constante y fiel a su marca, que construye audiencia y lo mantiene presente.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">10</span><h3 data-i18n="s10t">Impresos y letreros</h3><p data-i18n="s10d">Tarjetas de presentación, volantes, pancartas y rotulación que llevan su marca fuera de la pantalla.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">11</span><h3 data-i18n="s11t">Correo de Google Workspace</h3><p data-i18n="s11d">Correo profesional en su propio dominio, configurado y listo para usar. Somos revendedor autorizado de Google Workspace.</p></li>
         </ul>
       </div>
     </section>
@@ -790,10 +737,9 @@
     <section class="about" id="about" aria-labelledby="about-h">
       <div class="wrap">
         <div class="about-panel">
-          <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
-          <h2 class="section-title" id="about-h" data-i18n="aboutTitle">Local, bilingual and based in Puerto Rico.</h2>
-          <p data-i18n="aboutCopy">OjO Marketing Group is a bilingual team based in Puerto Rico. We work in English and Spanish, and we help local businesses grow with practical tools — from AI and automation to the brand, the website and the campaign. We are also an authorized Google Workspace reseller, and we are easy to work with.</p>
-          <p class="about-es" lang="es">Hablamos español. Si prefiere que hablemos en español, con gusto le atendemos.</p>
+          <p class="eyebrow" data-i18n="aboutEyebrow">Nosotros</p>
+          <h2 class="section-title" id="about-h" data-i18n="aboutTitle">Local, bilingüe y con base en Puerto Rico.</h2>
+          <p data-i18n="aboutCopy">OjO Marketing Group es un equipo bilingüe con base en Puerto Rico. Trabajamos en inglés y en español, y ayudamos a los negocios locales a crecer con herramientas prácticas — desde AI y la automatización hasta la marca, el sitio web y la campaña. También somos revendedor autorizado de Google Workspace, y somos fáciles de tratar.</p>
         </div>
       </div>
     </section>
@@ -801,16 +747,16 @@
     <section id="contact" aria-labelledby="contact-h">
       <div class="wrap">
         <div class="contact-box">
-          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
-          <h2 class="section-title" id="contact-h" data-i18n="contactTitle">Let’s talk about your business.</h2>
-          <p class="lead-plain" data-i18n="contactLead">Give us a call — we’d love to help.</p>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contacto</p>
+          <h2 class="section-title" id="contact-h" data-i18n="contactTitle">Hablemos de su negocio.</h2>
+          <p class="lead-plain" data-i18n="contactLead">Llámenos — con gusto le ayudamos.</p>
           <ul class="info">
             <li>
-              <span data-i18n="phoneLabel">Phone</span>
+              <span data-i18n="phoneLabel">Teléfono</span>
               <a href="tel:+17874489030">787-448-9030</a>
             </li>
             <li>
-              <span data-i18n="emailLabel">Email</span>
+              <span data-i18n="emailLabel">Correo electrónico</span>
               <a href="mailto:info@ojomg.com">info@ojomg.com</a>
             </li>
           </ul>
@@ -832,11 +778,9 @@
       <span class="marquee-item">OjO MARKETING GROUP <span class="marquee-star">&#9733;</span></span>
       <span class="marquee-item">GOOGLE WORKSPACE RESELLER <span class="marquee-star">&#9733;</span></span>
       <span class="marquee-item">PUERTO RICO <span class="marquee-star">&#9733;</span></span>
-      <span class="marquee-item">HABLAMOS ESPAÑOL <span class="marquee-star">&#9733;</span></span>
       <span class="marquee-item">OjO MARKETING GROUP <span class="marquee-star">&#9733;</span></span>
       <span class="marquee-item">GOOGLE WORKSPACE RESELLER <span class="marquee-star">&#9733;</span></span>
       <span class="marquee-item">PUERTO RICO <span class="marquee-star">&#9733;</span></span>
-      <span class="marquee-item">HABLAMOS ESPAÑOL <span class="marquee-star">&#9733;</span></span>
     </div>
   </div>
 
@@ -901,22 +845,22 @@
         navServices: "Servicios",
         navAbout: "Nosotros",
         navContact: "Contacto",
-        heroTitle: "IA, sitios web y mercadeo para su negocio.",
-        heroLead: "Ayudamos a los negocios locales a ahorrar tiempo y crecer — con IA y automatización, y con los sitios web, la marca y el mercadeo para ponerlos a trabajar.",
+        heroTitle: "AI, Web Design y mercadeo para su negocio.",
+        heroLead: "Ayudamos a los negocios locales a ahorrar tiempo y crecer — con AI y automatización, y con Web Design, la marca y el mercadeo para ponerlos a trabajar.",
         seeServices: "Vea lo que hacemos <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Revendedor autorizado",
         servicesEyebrow: "Servicios",
-        servicesTitle: "Ponga la IA y la automatización a trabajar en su negocio.",
+        servicesTitle: "Ponga AI y la automatización a trabajar en su negocio.",
         ourFocus: "Nuestro enfoque",
-        aiTitle: "Integración y automatización con IA",
-        aiCopy: "Le ayudamos a usar la IA y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.",
-        aiBullet1: "Chat y asistentes de IA",
-        aiBullet2: "Automatización de flujos de trabajo",
-        aiBullet3: "Automatización de CRM y correo",
-        aiBullet4: "Mercadeo impulsado por IA",
-        startAi: "Empezar con IA",
+        aiTitle: "AI Integration &amp; Automation",
+        aiCopy: "Le ayudamos a usar AI y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.",
+        aiBullet1: "AI chat and assistants",
+        aiBullet2: "Workflow automation",
+        aiBullet3: "CRM and email automation",
+        aiBullet4: "AI-powered marketing",
+        startAi: "Empezar con AI",
         supporting: "Otros servicios",
-        s1t: "Sitios web",
+        s1t: "Web Design",
         s1d: "Sitios rápidos y pensados para el celular, con un diseño nítido que ayuda a convertir visitantes en clientes.",
         s2t: "Aplicaciones web a la medida",
         s2d: "Aplicaciones, portales y paneles hechos a la medida de cómo funciona su negocio.",
@@ -932,7 +876,7 @@
         s7d: "Una estrategia clara y una mirada honesta de afuera para decidir qué sigue, y por qué.",
         s8t: "Marca y diseño de logotipo",
         s8d: "Logotipos e identidades de marca que hacen su negocio fácil de reconocer y difícil de olvidar.",
-        s9t: "Redes sociales",
+        s9t: "Social Media",
         s9d: "Contenido constante y fiel a su marca, que construye audiencia y lo mantiene presente.",
         s10t: "Impresos y letreros",
         s10d: "Tarjetas de presentación, volantes, pancartas y rotulación que llevan su marca fuera de la pantalla.",
@@ -940,19 +884,19 @@
         s11d: "Correo profesional en su propio dominio, configurado y listo para usar. Somos revendedor autorizado de Google Workspace.",
         aboutEyebrow: "Nosotros",
         aboutTitle: "Local, bilingüe y con base en Puerto Rico.",
-        aboutCopy: "OjO Marketing Group es un equipo bilingüe con base en Puerto Rico. Trabajamos en inglés y en español, y ayudamos a los negocios locales a crecer con herramientas prácticas — desde la IA y la automatización hasta la marca, el sitio web y la campaña. También somos revendedor autorizado de Google Workspace, y somos fáciles de tratar.",
+        aboutCopy: "OjO Marketing Group es un equipo bilingüe con base en Puerto Rico. Trabajamos en inglés y en español, y ayudamos a los negocios locales a crecer con herramientas prácticas — desde AI y la automatización hasta la marca, el sitio web y la campaña. También somos revendedor autorizado de Google Workspace, y somos fáciles de tratar.",
         contactEyebrow: "Contacto",
         contactTitle: "Hablemos de su negocio.",
         contactLead: "Llámenos — con gusto le ayudamos.",
         phoneLabel: "Teléfono",
         emailLabel: "Correo electrónico",
         copyright: "&copy; 2026 OjO Marketing Group",
-        docTitle: "OjO Marketing Group | IA, sitios web y mercadeo"
+        docTitle: "OjO Marketing Group | AI, Web Design y mercadeo"
       }
     };
 
     function setLang(lang) {
-      if (!t[lang]) lang = "en";
+      if (!t[lang]) lang = "es";
       document.documentElement.lang = lang;
       document.title = t[lang].docTitle.replace(/&amp;/g, "&");
       document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -962,7 +906,7 @@
       document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
       document.getElementById("btn-es").setAttribute("aria-pressed", lang === "es" ? "true" : "false");
       var url = new URL(window.location.href);
-      if (lang === "en") url.searchParams.delete("lang");
+      if (lang === "es") url.searchParams.delete("lang");
       else url.searchParams.set("lang", lang);
       history.replaceState(null, "", url.pathname + url.search + url.hash);
     }
@@ -971,7 +915,7 @@
       btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang")); });
     });
 
-    var start = new URLSearchParams(window.location.search).get("lang") || "en";
+    var start = new URLSearchParams(window.location.search).get("lang") || "es";
     setLang(start);
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
