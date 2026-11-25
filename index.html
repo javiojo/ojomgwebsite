@@ -165,13 +165,36 @@
       text-align: left;
     }
 
+    .logo-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-self: stretch;
+      gap: 1.1rem 1.6rem;
+      width: 100%;
+      margin: 0 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .logo-tagline {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.12rem, 2.5vw, 1.65rem);
+      line-height: 1.25;
+      color: var(--white);
+      text-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+      max-width: 16ch;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      animation: slide-up 0.6s 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
     .burst-wrap {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      align-self: flex-start;
-      margin: 0 0 clamp(1.25rem, 4vw, 2.5rem);
+      flex-shrink: 0;
+      margin: 0;
     }
     .burst {
       position: absolute;
@@ -650,13 +673,24 @@
       }
       .hero { padding-top: 5.25rem; }
     }
+    @media (max-width: 640px) {
+      .logo-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+      }
+      .logo-tagline {
+        max-width: 22ch;
+        font-size: clamp(1.05rem, 4.8vw, 1.3rem);
+      }
+    }
     @media (max-width: 520px) {
       .feature, .about-panel, .contact-box, .form { padding: 1.1rem 1rem; }
       .burst { width: 280px; height: 280px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .burst, .logo-img, .hero h1, .hero-cta, .google-badge,
+      .burst, .logo-img, .logo-tagline, .hero h1, .hero-cta, .google-badge,
       .zap-icon, .marquee-track, .pop-dot { animation: none !important; }
     }
   </style>
@@ -676,9 +710,12 @@
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
+    <div class="logo-row">
     <div class="burst-wrap">
       <div class="burst" aria-hidden="true"></div>
       <img class="logo-img" src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
+    </div>
+    <p class="logo-tagline" data-i18n="heroTagline">Ponga AI y la automatización a trabajar en su negocio.</p>
     </div>
 
     <h1 data-i18n="heroSlogan">Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.</h1>
@@ -847,6 +884,7 @@
         navAbout: "About",
         navContact: "Contact",
         heroSlogan: "Creating Impressive Concepts;<br>Always Getting&nbsp;Results.",
+        heroTagline: "Put AI and automation to work for your business.",
         seeServices: "See what we do <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Authorized Reseller",
         servicesEyebrow: "Services",
@@ -917,6 +955,7 @@
         navAbout: "Nosotros",
         navContact: "Contacto",
         heroSlogan: "Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.",
+        heroTagline: "Ponga AI y la automatización a trabajar en su negocio.",
         seeServices: "Vea lo que hacemos <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Revendedor autorizado",
         servicesEyebrow: "Servicios",
