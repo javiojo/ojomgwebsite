@@ -38,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 5.5rem;
+      scroll-padding-top: 5rem;
     }
 
     html, body {
@@ -96,55 +96,36 @@
       z-index: 1;
     }
 
-    /* Nav */
-    .nav-bar {
-      position: sticky;
-      top: 0;
+    /* Floating top menu: no header bar, no small logo */
+    .nav-float {
+      position: fixed;
+      top: 0.75rem;
+      right: max(0.75rem, calc((100vw - 68rem) / 2));
+      left: auto;
       z-index: 30;
-      background: rgba(10, 10, 18, 0.94);
-      border-bottom: 3px solid var(--ink);
-      box-shadow: 0 6px 0 rgba(0, 212, 255, 0.25);
-      backdrop-filter: blur(8px);
-    }
-    .nav-inner {
-      width: min(100% - 1.5rem, 68rem);
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      position: relative;
-      z-index: 1;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav-logo img {
-      width: 118px;
-      height: auto;
-      filter: drop-shadow(0 0 10px rgba(91,94,222,0.6));
-    }
-    .nav-links {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 0.35rem 1.1rem;
+      padding: 0.4rem 0.65rem 0.4rem 1.15rem;
       font-weight: 900;
       font-size: 0.92rem;
       letter-spacing: 0.04em;
+      background: rgba(10, 10, 18, 0.72);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: 4px 4px 0 rgba(0, 212, 255, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    .nav-links a {
+    .nav-float a {
       text-decoration: none;
       color: var(--white);
       padding: 0.35rem 0;
       border-bottom: 3px solid transparent;
     }
-    .nav-links a:hover { color: var(--yellow); border-bottom-color: var(--cyan); }
+    .nav-float a:hover { color: var(--yellow); border-bottom-color: var(--cyan); }
 
     .lang-toggle {
       display: inline-flex;
@@ -152,7 +133,7 @@
       border-radius: 999px;
       overflow: hidden;
       box-shadow: 3px 3px 0 var(--ink);
-      margin-left: 0.4rem;
+      margin-left: 0.25rem;
     }
     .lang-toggle button {
       font-family: 'Nunito', sans-serif;
@@ -175,7 +156,7 @@
     .hero {
       position: relative;
       z-index: 1;
-      padding: 2.2rem 0 3.25rem;
+      padding: 5rem 0 3.25rem;
     }
     .hero-inner {
       display: flex;
@@ -655,13 +636,23 @@
     }
     @media (min-width: 960px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
-      .nav-logo img { width: 136px; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    @media (max-width: 900px) {
+      .nav-float {
+        top: 0.5rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        justify-content: center;
+        gap: 0.3rem 0.75rem;
+        font-size: 0.82rem;
+        padding: 0.4rem 0.6rem;
+      }
+      .hero { padding-top: 5.25rem; }
     }
     @media (max-width: 520px) {
       .feature, .about-panel, .contact-box, .form { padding: 1.1rem 1rem; }
       .burst { width: 280px; height: 280px; }
-      .nav-links { gap: 0.3rem 0.75rem; font-size: 0.82rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -673,22 +664,15 @@
 <body>
   <a class="skip" href="#services" data-i18n="skip">Saltar a servicios</a>
 
-  <header class="nav-bar">
-    <div class="nav-inner">
-      <a class="nav-logo" href="#top">
-        <img src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
-      </a>
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#services" data-i18n="navServices">Servicios</a>
-        <a href="#about" data-i18n="navAbout">Nosotros</a>
-        <a href="#contact" data-i18n="navContact">Contacto</a>
-        <div class="lang-toggle" role="group" aria-label="Idioma">
-          <button type="button" id="btn-en" aria-pressed="false" data-lang="en">EN</button>
-          <button type="button" id="btn-es" aria-pressed="true" data-lang="es">ES</button>
-        </div>
-      </nav>
+  <nav class="nav-float" aria-label="Principal">
+    <a href="#services" data-i18n="navServices">Servicios</a>
+    <a href="#about" data-i18n="navAbout">Nosotros</a>
+    <a href="#contact" data-i18n="navContact">Contacto</a>
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <button type="button" id="btn-en" aria-pressed="false" data-lang="en">EN</button>
+      <button type="button" id="btn-es" aria-pressed="true" data-lang="es">ES</button>
     </div>
-  </header>
+  </nav>
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
@@ -790,7 +774,7 @@
             </li>
           </ul>
         </div>
-        <form id="form" class="form" action="https://formsubmit.co/ajax/javier@ojomg.com" method="POST">
+        <form id="form" class="form" action="https://formsubmit.co/ajax/7cbbb606fe5fa0373ffbc75c86ce14c3" method="POST">
           <input type="hidden" name="_subject" value="ojomg.com contact">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
