@@ -184,6 +184,58 @@
       z-index: 2;
     }
 
+    .ai-logos {
+      margin-top: 1.75rem;
+      width: 100%;
+      animation: slide-up 0.6s 0.7s both;
+    }
+    .ai-logos-label {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: 0 0 0.75rem;
+    }
+    .ai-logos-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 1.1rem 1.55rem;
+      margin: 0;
+      padding: 0;
+    }
+    .ai-logos-list li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 3.4rem;
+    }
+    .ai-logos-list img {
+      height: 32px;
+      width: auto;
+      max-width: 42px;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: filter 0.15s, opacity 0.15s, transform 0.15s;
+    }
+    .ai-logos-list li:hover img {
+      opacity: 1;
+      transform: translateY(-2px);
+      filter: brightness(0) invert(1) sepia(1) saturate(12) hue-rotate(5deg);
+    }
+    .ai-logos-list span {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+    .ai-logos-list li:hover span { color: var(--yellow); }
+
     .burst-wrap {
       position: relative;
       display: flex;
@@ -655,7 +707,8 @@
       .feature .btn-ink { grid-column: 1 / -1; }
     }
     @media (min-width: 901px) {
-      .logo-row .section-title { font-size: clamp(52px, 4.6vw, 68px); }
+      .logo-row .section-title { font-size: clamp(56px, 5.2vw, 80px); }
+      .logo-row .section-title .title-break { display: block; }
     }
     @media (min-width: 960px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
@@ -679,6 +732,14 @@
         align-items: flex-start;
         gap: 0.85rem;
       }
+      .ai-logos-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.45rem;
+        gap: 1rem 1.2rem;
+      }
+      .ai-logos-list img { height: 28px; }
     }
     @media (max-width: 520px) {
       .feature, .about-panel, .contact-box, .form { padding: 1.1rem 1rem; }
@@ -686,7 +747,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .burst, .logo-img, .hero h1, .hero-cta, .google-badge,
+      .burst, .logo-img, .hero h1, .ai-logos, .hero-cta, .google-badge,
       .zap-icon, .marquee-track, .pop-dot { animation: none !important; }
     }
   </style>
@@ -708,12 +769,46 @@
     <div class="wrap hero-inner">
     <h1 data-i18n="heroSlogan">Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.</h1>
 
+    <div class="ai-logos">
+      <p class="ai-logos-label" data-i18n="aiLogosLabel">Trabajamos con</p>
+      <ul class="ai-logos-list">
+        <li>
+          <img src="assets/ai-logos/chatgpt.svg" width="24" height="24" alt="ChatGPT">
+          <span>ChatGPT</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/claude.svg" width="24" height="24" alt="Claude">
+          <span>Claude</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/grok.svg" width="24" height="24" alt="Grok">
+          <span>Grok</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/gemini.svg" width="24" height="24" alt="Gemini">
+          <span>Gemini</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/muse.svg" width="24" height="24" alt="Muse">
+          <span>Muse</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/copilot.svg" width="24" height="24" alt="Copilot">
+          <span>Copilot</span>
+        </li>
+        <li>
+          <img src="assets/ai-logos/perplexity.svg" width="24" height="24" alt="Perplexity">
+          <span>Perplexity</span>
+        </li>
+      </ul>
+    </div>
+
     <div class="logo-row">
     <div class="burst-wrap">
       <div class="burst" aria-hidden="true"></div>
       <img class="logo-img" src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
     </div>
-    <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Ponga AI y la automatización a trabajar en su negocio.</h2>
+    <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Utilice AI para <span class="title-break">Automatizar su Negocio</span></h2>
     </div>
 
 
@@ -879,7 +974,8 @@
         seeServices: "See what we do <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Authorized Reseller",
         servicesEyebrow: "Services",
-        servicesTitle: "Put AI and automation to work for your business.",
+        servicesTitle: "Use AI to Automate <span class=\"title-break\">Your Business</span>",
+        aiLogosLabel: "We work with",
         ourFocus: "Our focus",
         aiTitle: "AI Integration &amp; Automation",
         aiCopy: "We help you use AI and automation to cut busywork, save time and grow. We find where it will actually pay off, then build it and set it up so your team can use it from day one.",
@@ -949,7 +1045,8 @@
         seeServices: "Vea lo que hacemos <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Revendedor autorizado",
         servicesEyebrow: "Servicios",
-        servicesTitle: "Ponga AI y la automatización a trabajar en su negocio.",
+        servicesTitle: "Utilice AI para <span class=\"title-break\">Automatizar su Negocio</span>",
+        aiLogosLabel: "Trabajamos con",
         ourFocus: "Nuestro enfoque",
         aiTitle: "AI Integration &amp; Automation",
         aiCopy: "Le ayudamos a usar AI y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.",

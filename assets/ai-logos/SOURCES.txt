@@ -1,0 +1,40 @@
+AI model marks used on ojomg.com, self-hosted. Trademarks of their owners; used only to identify the tools. No endorsement is implied.
+
+chatgpt.svg
+  ChatGPT / OpenAI blossom mark
+  Source: Simple Icons (CC0), slug "openai"
+  https://github.com/simple-icons/simple-icons (via jsDelivr simple-icons@latest)
+
+claude.svg
+  Claude
+  Source: Simple Icons (CC0), slug "claude"
+  https://github.com/simple-icons/simple-icons (via jsDelivr simple-icons@v16)
+
+grok.svg
+  Official Grok logomark, light variant (for dark backgrounds), unmodified
+  Source: xAI / SpaceXSI brand kit
+  https://x.ai/legal/brand-guidelines
+  https://data.x.ai/logos/xAI_Grok_Assets.zip  (file: Grok_Logomark_Light.svg)
+
+gemini.svg
+  Google Gemini
+  Source: Simple Icons (CC0), slug "googlegemini"
+  https://github.com/simple-icons/simple-icons (via jsDelivr simple-icons@v16)
+
+muse.svg
+  Official Muse icon (Meta's personal AI agent, 2026), designed by Jessica Hische
+  Source: Wikimedia Commons File:Muse_icon.svg
+  Upstream source cited on Commons: https://muse.ai  (Meta Platforms, Inc., 29 Sep 2026)
+  https://commons.wikimedia.org/wiki/File:Muse_icon.svg
+  https://upload.wikimedia.org/wikipedia/commons/8/88/Muse_icon.svg
+
+copilot.svg
+  Microsoft 365 Copilot, one-color icon
+  Source: Wikimedia Commons File:Microsoft 365 Copilot Icon one-color.svg
+  Author: Microsoft Corporation
+  https://commons.wikimedia.org/wiki/File:Microsoft_365_Copilot_Icon_one-color.svg
+
+perplexity.svg
+  Perplexity
+  Source: Simple Icons (CC0), slug "perplexity"
+  https://github.com/simple-icons/simple-icons (via jsDelivr simple-icons@v16)
