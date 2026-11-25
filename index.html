@@ -171,15 +171,17 @@
     }
     .lang-toggle button:hover { filter: brightness(1.08); }
 
-    /* Hero */
+    /* Hero: logo top-left above the slogan, left-aligned copy */
     .hero {
       position: relative;
       z-index: 1;
+      padding: 2.2rem 0 3.25rem;
+    }
+    .hero-inner {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 2.2rem 1.25rem 3.25rem;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .burst-wrap {
@@ -187,7 +189,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 8px;
+      align-self: flex-start;
+      margin: 0 0 clamp(1.25rem, 4vw, 2.5rem);
     }
     .burst {
       position: absolute;
@@ -229,68 +232,27 @@
       to   { transform: translateY(0);    opacity: 1; }
     }
 
-    .headline-panel {
-      margin-top: 16px;
-      background: var(--dark);
-      border: 4px solid var(--cyan);
-      border-radius: 12px;
-      padding: 20px 32px;
-      box-shadow: 6px 6px 0 var(--cyan), 10px 10px 0 rgba(0,212,255,0.2);
-      text-align: center;
-      max-width: 720px;
-      animation: slide-up 0.6s 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
-    .headline-panel h1 {
+    .hero h1 {
       font-family: 'Permanent Marker', cursive;
-      font-size: clamp(22px, 4.2vw, 36px);
+      font-size: clamp(1.5rem, 4.4vw, 2.35rem);
       color: var(--yellow);
-      line-height: 1.25;
+      line-height: 1.22;
       letter-spacing: 0.4px;
       font-weight: 400;
-    }
-    .lead {
-      margin-top: 14px;
-      font-size: clamp(15px, 2.2vw, 18px);
-      font-weight: 700;
-      color: var(--cyan);
-      line-height: 1.55;
+      max-width: min(38rem, 100%);
+      margin: 0;
+      animation: slide-up 0.6s 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
     }
 
     .hero-cta {
-      margin-top: 32px;
+      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 16px 22px;
       animation: slide-up 0.6s 0.7s both;
     }
-    .cta-phone {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--yellow);
-      color: var(--ink);
-      border: 4px solid var(--ink);
-      border-radius: 50px;
-      padding: 12px 32px;
-      font-family: 'Bangers', cursive;
-      font-size: clamp(22px, 4vw, 32px);
-      letter-spacing: 3px;
-      text-decoration: none;
-      box-shadow: 6px 6px 0 var(--ink);
-      transition: transform 0.12s, box-shadow 0.12s;
-      cursor: pointer;
-    }
-    .cta-phone:hover {
-      transform: translate(-3px,-3px);
-      box-shadow: 9px 9px 0 var(--ink);
-    }
-    .cta-phone:active {
-      transform: translate(2px,2px);
-      box-shadow: 3px 3px 0 var(--ink);
-    }
-    .phone-icon { font-size: 24px; }
     .btn-link {
       font-weight: 900;
       color: var(--white);
@@ -304,7 +266,7 @@
       margin-top: 28px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
       animation: slide-up 0.6s 0.85s both;
     }
@@ -526,13 +488,17 @@
     .about-panel p:last-child { margin-bottom: 0; }
 
     /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
     .contact-box {
       background: var(--dark);
       border: 4px solid var(--cyan);
       border-radius: 16px;
       padding: clamp(1.4rem, 4vw, 2.4rem);
       box-shadow: 8px 8px 0 var(--cyan);
-      max-width: 40rem;
     }
     .contact-box .section-title { max-width: 16ch; }
     .contact-box .lead-plain {
@@ -565,6 +531,69 @@
       font-size: 1.25rem;
     }
     .info a:hover { border-bottom-color: var(--yellow); }
+
+    .form {
+      display: grid;
+      gap: 1rem;
+      background: var(--panel);
+      border: 4px solid var(--ink);
+      border-radius: 16px;
+      padding: clamp(1.4rem, 4vw, 2.4rem);
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+    .form label {
+      display: grid;
+      gap: 0.4rem;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+    .form small { font-weight: 700; color: rgba(255,255,255,0.55); }
+    .form input, .form select, .form textarea {
+      font: inherit;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--dark);
+      border: 3px solid var(--ink);
+      border-radius: 0.5rem;
+      padding: 0.8rem 0.9rem;
+      width: 100%;
+    }
+    .form select option { color: var(--ink); background: #fff; }
+    .form input:focus, .form select:focus, .form textarea:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.25);
+    }
+    .form textarea { resize: vertical; min-height: 7rem; }
+    .hp {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
+    .btn-send {
+      justify-self: start;
+      font-family: 'Bangers', cursive;
+      font-size: 1.35rem;
+      letter-spacing: 1.5px;
+      background: var(--yellow);
+      color: var(--ink);
+      border: 3px solid var(--ink);
+      border-radius: 50px;
+      padding: 0.75rem 1.6rem;
+      box-shadow: 4px 4px 0 var(--ink);
+      cursor: pointer;
+    }
+    .btn-send:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+    .btn-send:disabled { opacity: 0.6; cursor: wait; transform: none; box-shadow: 4px 4px 0 var(--ink); }
+    .status {
+      min-height: 1.5em;
+      margin: 0;
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
 
     /* Footer */
     .page-footer {
@@ -627,16 +656,16 @@
     @media (min-width: 960px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
       .nav-logo img { width: 136px; }
+      .contact-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
     }
     @media (max-width: 520px) {
-      .headline-panel, .feature, .about-panel, .contact-box { padding: 1.1rem 1rem; }
-      .cta-phone { padding: 12px 22px; }
+      .feature, .about-panel, .contact-box, .form { padding: 1.1rem 1rem; }
       .burst { width: 280px; height: 280px; }
       .nav-links { gap: 0.3rem 0.75rem; font-size: 0.82rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .burst, .logo-img, .headline-panel, .hero-cta, .google-badge,
+      .burst, .logo-img, .hero h1, .hero-cta, .google-badge,
       .zap-icon, .marquee-track, .pop-dot { animation: none !important; }
     }
   </style>
@@ -662,21 +691,15 @@
   </header>
 
   <header class="hero" id="top">
+    <div class="wrap hero-inner">
     <div class="burst-wrap">
       <div class="burst" aria-hidden="true"></div>
       <img class="logo-img" src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
     </div>
 
-    <div class="headline-panel">
-      <h1 data-i18n="heroTitle">AI, Web Design y mercadeo para su negocio.</h1>
-      <p class="lead" data-i18n="heroLead">Ayudamos a los negocios locales a ahorrar tiempo y crecer — con AI y automatización, y con Web Design, la marca y el mercadeo para ponerlos a trabajar.</p>
-    </div>
+    <h1 data-i18n="heroSlogan">Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.</h1>
 
     <p class="hero-cta">
-      <a class="cta-phone" href="tel:+17874489030">
-        <span class="phone-icon" aria-hidden="true">&#x1F4DE;</span>
-        787-448-9030
-      </a>
       <a class="btn-link" href="#services" data-i18n="seeServices">Vea lo que hacemos <span aria-hidden="true">&rarr;</span></a>
     </p>
 
@@ -689,6 +712,7 @@
         <div class="g-dot"></div>
       </div>
       <span class="g-badge-text">Google Workspace</span>
+    </div>
     </div>
   </header>
 
@@ -749,23 +773,68 @@
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-h">
-      <div class="wrap">
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap contact-grid">
         <div class="contact-box">
           <p class="eyebrow" data-i18n="contactEyebrow">Contacto</p>
           <h2 class="section-title" id="contact-h" data-i18n="contactTitle">Hablemos de su negocio.</h2>
-          <p class="lead-plain" data-i18n="contactLead">Llámenos — con gusto le ayudamos.</p>
+          <p class="lead-plain" data-i18n="contactLead">Cuéntenos en qué está trabajando y le respondemos.</p>
           <ul class="info">
             <li>
               <span data-i18n="emailLabel">Email</span>
               <a href="mailto:info@ojomg.com">info@ojomg.com</a>
             </li>
+            <li>
+              <span data-i18n="phoneLabel">Teléfono</span>
+              <a href="tel:+17874489030">787-448-9030</a>
+            </li>
           </ul>
-          <a class="cta-phone" href="tel:+17874489030">
-            <span class="phone-icon" aria-hidden="true">&#x1F4DE;</span>
-            787-448-9030
-          </a>
         </div>
+        <form id="form" class="form" action="https://formsubmit.co/ajax/info@ojomg.com" method="POST">
+          <input type="hidden" name="_subject" value="ojomg.com contact">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <label>
+            <span data-i18n="formName">Nombre</span>
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span data-i18n="formEmail">Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span data-i18n="formPhone">Teléfono <small>(opcional)</small></span>
+            <input type="tel" name="phone" autocomplete="tel">
+          </label>
+          <label>
+            <span data-i18n="formInterest">Me interesa</span>
+            <select name="service">
+              <option value="Not sure yet" data-i18n="formOpt0">Todavía no estoy seguro</option>
+              <option value="AI Integration &amp; Automation" data-i18n="s1t">AI Integration &amp; Automation</option>
+              <option value="Websites" data-i18n="s2t">Web Design</option>
+              <option value="Custom Web Apps" data-i18n="s3t">Aplicaciones web a la medida</option>
+              <option value="Web Hosting" data-i18n="s4t">Web Hosting</option>
+              <option value="SEO" data-i18n="s5t">SEO</option>
+              <option value="Google Ads" data-i18n="s6t">Google Ads</option>
+              <option value="Advertising" data-i18n="s7t">Publicidad</option>
+              <option value="Media Planning" data-i18n="s8t">Planificación de medios</option>
+              <option value="Video Production" data-i18n="s9t">Video Production</option>
+              <option value="Marketing Consulting" data-i18n="s10t">Consultoría de mercadeo</option>
+              <option value="Branding &amp; Logo Design" data-i18n="s11t">Marca y diseño de logotipo</option>
+              <option value="Social Media" data-i18n="s12t">Social Media</option>
+              <option value="Printing &amp; Signs" data-i18n="s13t">Impresos y letreros</option>
+              <option value="Bordados" data-i18n="s14t">Bordados</option>
+              <option value="Google Workspace Business Email" data-i18n="s15t">Correo de Google Workspace</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="formMessage">Mensaje</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <button class="btn-send" type="submit" data-i18n="formSend">Enviar mensaje</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -793,8 +862,7 @@
         navServices: "Services",
         navAbout: "About",
         navContact: "Contact",
-        heroTitle: "AI, websites and marketing for your business.",
-        heroLead: "We help local businesses save time and grow — with AI and automation, plus the websites, branding and marketing to put them to work.",
+        heroSlogan: "Creating Impressive Concepts;<br>Always Getting&nbsp;Results.",
         seeServices: "See what we do <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Authorized Reseller",
         servicesEyebrow: "Services",
@@ -843,9 +911,19 @@
         aboutCopy: "OjO Marketing Group is a bilingual team based in Puerto Rico. We work in English and Spanish, and we help local businesses grow with practical tools — from AI and automation to the brand, the website and the campaign. We are also an authorized Google Workspace reseller, and we are easy to work with.",
         contactEyebrow: "Contact",
         contactTitle: "Let’s talk about your business.",
-        contactLead: "Give us a call — we’d love to help.",
+        contactLead: "Tell us what you are working on and we will get back to you.",
         phoneLabel: "Phone",
         emailLabel: "Email",
+        formName: "Name",
+        formEmail: "Email",
+        formPhone: "Phone <small>(optional)</small>",
+        formInterest: "I’m interested in",
+        formMessage: "Message",
+        formSend: "Send message",
+        formSending: "Sending...",
+        formThanks: "Thanks! We’ll get back to you soon.",
+        formError: "Something went wrong. Opening your email app so you can send the message instead...",
+        formOpt0: "Not sure yet",
         copyright: "&copy; 2026 OjO Marketing Group",
         docTitle: "OjO Marketing Group | AI, Websites and Marketing"
       },
@@ -854,8 +932,7 @@
         navServices: "Servicios",
         navAbout: "Nosotros",
         navContact: "Contacto",
-        heroTitle: "AI, Web Design y mercadeo para su negocio.",
-        heroLead: "Ayudamos a los negocios locales a ahorrar tiempo y crecer — con AI y automatización, y con Web Design, la marca y el mercadeo para ponerlos a trabajar.",
+        heroSlogan: "Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.",
         seeServices: "Vea lo que hacemos <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Revendedor autorizado",
         servicesEyebrow: "Servicios",
@@ -904,16 +981,29 @@
         aboutCopy: "OjO Marketing Group es un equipo bilingüe con base en Puerto Rico. Trabajamos en inglés y en español, y ayudamos a los negocios locales a crecer con herramientas prácticas — desde AI y la automatización hasta la marca, el sitio web y la campaña. También somos revendedor autorizado de Google Workspace, y somos fáciles de tratar.",
         contactEyebrow: "Contacto",
         contactTitle: "Hablemos de su negocio.",
-        contactLead: "Llámenos — con gusto le ayudamos.",
+        contactLead: "Cuéntenos en qué está trabajando y le respondemos.",
         phoneLabel: "Teléfono",
         emailLabel: "Email",
+        formName: "Nombre",
+        formEmail: "Email",
+        formPhone: "Teléfono <small>(opcional)</small>",
+        formInterest: "Me interesa",
+        formMessage: "Mensaje",
+        formSend: "Enviar mensaje",
+        formSending: "Enviando...",
+        formThanks: "¡Gracias! Le responderemos pronto.",
+        formError: "Algo salió mal. Abriendo su Email para que pueda enviar el mensaje...",
+        formOpt0: "Todavía no estoy seguro",
         copyright: "&copy; 2026 OjO Marketing Group",
         docTitle: "OjO Marketing Group | AI, Web Design y mercadeo"
       }
     };
 
+    var currentLang = "es";
+
     function setLang(lang) {
       if (!t[lang]) lang = "es";
+      currentLang = lang;
       document.documentElement.lang = lang;
       document.title = t[lang].docTitle.replace(/&amp;/g, "&");
       document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -934,6 +1024,37 @@
 
     var start = new URLSearchParams(window.location.search).get("lang") || "es";
     setLang(start);
+
+    var f = document.getElementById("form"), s = document.getElementById("status");
+    if (f && s) {
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var b = f.querySelector("button[type='submit']");
+        var copy = t[currentLang] || t.es;
+        b.disabled = true;
+        s.textContent = copy.formSending;
+        var d = new FormData(f);
+        if (d.get("email")) d.set("_replyto", d.get("email"));
+        fetch(f.action, { method: "POST", body: d, headers: { Accept: "application/json" } })
+          .then(function (r) {
+            return r.json().then(function (data) {
+              var activating = data && typeof data.message === "string" && /activat/i.test(data.message);
+              if ((!r.ok || data.success === false || data.success === "false") && !activating) throw data;
+              return data;
+            }, function () { if (!r.ok) throw 0; });
+          })
+          .then(function () {
+            f.reset();
+            s.textContent = copy.formThanks;
+          })
+          .catch(function () {
+            var body = "Name: " + d.get("name") + "\nEmail: " + d.get("email") + "\nPhone: " + (d.get("phone") || "") + "\nInterested in: " + d.get("service") + "\n\n" + d.get("message");
+            s.textContent = copy.formError;
+            location.href = "mailto:info@ojomg.com?subject=" + encodeURIComponent("Website inquiry from " + d.get("name")) + "&body=" + encodeURIComponent(body);
+          })
+          .then(function () { b.disabled = false; });
+      });
+    }
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       var colors = ["#FFE000", "#FF3CAC", "#00D4FF", "#5B5EDE", "#FF6B35"];
