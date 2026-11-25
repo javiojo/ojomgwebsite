@@ -156,7 +156,7 @@
     .hero {
       position: relative;
       z-index: 1;
-      padding: 5rem 0 3.25rem;
+      padding: 6.5rem 0 3.25rem;
     }
     .hero-inner {
       display: flex;
@@ -164,6 +164,7 @@
       align-items: flex-start;
       text-align: left;
     }
+    .logo-row { order: -1; }
 
     .logo-row {
       display: flex;
@@ -174,18 +175,10 @@
       width: 100%;
       margin: 0 0 clamp(1.25rem, 4vw, 2.5rem);
     }
-    .logo-tagline {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.12rem, 2.5vw, 1.65rem);
-      line-height: 1.25;
-      color: var(--white);
-      text-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
-      max-width: 16ch;
-      margin: 0;
+    .logo-row .section-title {
+      margin-bottom: 0;
       position: relative;
       z-index: 2;
-      animation: slide-up 0.6s 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
     }
 
     .burst-wrap {
@@ -307,6 +300,7 @@
       color: var(--cyan);
       margin-bottom: 0.75rem;
     }
+    #services .eyebrow { margin-bottom: 1.5rem; }
     .section-title {
       font-family: 'Bangers', cursive;
       font-size: clamp(32px, 6vw, 52px);
@@ -657,6 +651,9 @@
       .feature { grid-template-columns: 1.3fr 1fr; gap: 1.6rem 2.2rem; }
       .feature .btn-ink { grid-column: 1 / -1; }
     }
+    @media (min-width: 901px) {
+      .logo-row { padding-right: min(28rem, 42%); }
+    }
     @media (min-width: 960px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -671,17 +668,13 @@
         font-size: 0.82rem;
         padding: 0.4rem 0.6rem;
       }
-      .hero { padding-top: 5.25rem; }
+      .hero { padding-top: 6.5rem; }
     }
     @media (max-width: 640px) {
       .logo-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.85rem;
-      }
-      .logo-tagline {
-        max-width: 22ch;
-        font-size: clamp(1.05rem, 4.8vw, 1.3rem);
       }
     }
     @media (max-width: 520px) {
@@ -690,7 +683,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .burst, .logo-img, .logo-tagline, .hero h1, .hero-cta, .google-badge,
+      .burst, .logo-img, .hero h1, .hero-cta, .google-badge,
       .zap-icon, .marquee-track, .pop-dot { animation: none !important; }
     }
   </style>
@@ -710,15 +703,15 @@
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
+    <h1 data-i18n="heroSlogan">Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.</h1>
+
     <div class="logo-row">
     <div class="burst-wrap">
       <div class="burst" aria-hidden="true"></div>
       <img class="logo-img" src="assets/logo.png" width="784" height="467" alt="OjO Marketing Group">
     </div>
-    <p class="logo-tagline" data-i18n="heroTagline">Ponga AI y la automatización a trabajar en su negocio.</p>
+    <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Ponga AI y la automatización a trabajar en su negocio.</h2>
     </div>
-
-    <h1 data-i18n="heroSlogan">Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.</h1>
 
     <p class="hero-cta">
       <a class="btn-link" href="#services" data-i18n="seeServices">Vea lo que hacemos <span aria-hidden="true">&rarr;</span></a>
@@ -738,15 +731,14 @@
   </header>
 
   <main>
-    <section id="services" aria-labelledby="services-h">
+    <section id="services" aria-labelledby="services-label">
       <div class="wrap">
         <div class="zap-divider" aria-hidden="true">
           <div class="zap-line"></div>
           <span class="zap-icon">&#x26A1;</span>
           <div class="zap-line"></div>
         </div>
-        <p class="eyebrow" data-i18n="servicesEyebrow">Servicios</p>
-        <h2 class="section-title" id="services-h" data-i18n="servicesTitle">Ponga AI y la automatización a trabajar en su negocio.</h2>
+        <p class="eyebrow" id="services-label" data-i18n="servicesEyebrow">Servicios</p>
 
         <article class="feature">
           <div>
@@ -884,7 +876,6 @@
         navAbout: "About",
         navContact: "Contact",
         heroSlogan: "Creating Impressive Concepts;<br>Always Getting&nbsp;Results.",
-        heroTagline: "Put AI and automation to work for your business.",
         seeServices: "See what we do <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Authorized Reseller",
         servicesEyebrow: "Services",
@@ -955,7 +946,6 @@
         navAbout: "Nosotros",
         navContact: "Contacto",
         heroSlogan: "Creamos Conceptos Impresionantes;<br>Siempre Logrando&nbsp;Resultados.",
-        heroTagline: "Ponga AI y la automatización a trabajar en su negocio.",
         seeServices: "Vea lo que hacemos <span aria-hidden=\"true\">&rarr;</span>",
         reseller: "Revendedor autorizado",
         servicesEyebrow: "Servicios",
