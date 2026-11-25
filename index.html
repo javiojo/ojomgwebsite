@@ -427,23 +427,13 @@
       content: "";
       position: absolute;
       left: 0.7rem;
-      top: 0.95rem;
+      top: 50%;
       width: 0.75rem;
       height: 0.75rem;
       border-radius: 2px;
       background: var(--blue);
-      transform: skewX(-20deg);
+      transform: translateY(-50%) skewX(-20deg);
       border: 2px solid var(--ink);
-    }
-    .feature-list .bullet-desc {
-      display: block;
-      margin-top: 0.35rem;
-      font-weight: 700;
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-    @media (max-width: 520px) {
-      .feature-list .bullet-desc { font-size: 0.84rem; }
     }
     .btn-ink {
       display: inline-block;
@@ -719,10 +709,7 @@
             <p class="feature-copy" data-i18n="aiCopy">Le ayudamos a usar AI y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.</p>
           </div>
           <ul class="feature-list">
-            <li>
-              <span data-i18n="aiBullet1">AI Agents</span>
-              <span class="bullet-desc" data-i18n="aiBullet1d">Los AI Agents planifican, crean workflows, usan herramientas inteligentes y toman acciones autónomas hacia una meta, ahorrándole tiempo a su equipo y ayudándole a crecer.</span>
-            </li>
+            <li data-i18n="aiBullet1">AI Agents</li>
             <li data-i18n="aiBullet2">Workflow automation</li>
             <li data-i18n="aiBullet3">CRM and email automation</li>
             <li data-i18n="aiBullet4">AI-powered marketing</li>
@@ -732,7 +719,7 @@
 
         <h3 class="sub" data-i18n="supporting">Otros servicios</h3>
         <ul class="grid">
-          <li class="card"><span class="num" aria-hidden="true">01</span><h3 data-i18n="s1t">AI Integration &amp; Automation</h3><p data-i18n="s1d">AI assistants, Workflow automation y herramientas inteligentes que le ahorran tiempo a su equipo y le ayudan a crecer.</p></li>
+          <li class="card"><span class="num" aria-hidden="true">01</span><h3 data-i18n="s1t">AI Integration &amp; Automation</h3><p data-i18n="s1d">Los AI Agents planifican, crean workflows, usan herramientas inteligentes y toman acciones autónomas hacia una meta, ahorrándole tiempo a su equipo y ayudándole a crecer.</p></li>
           <li class="card"><span class="num" aria-hidden="true">02</span><h3 data-i18n="s2t">Web Design</h3><p data-i18n="s2d">Sitios rápidos y pensados para el celular, con un diseño nítido que ayuda a convertir visitantes en clientes.</p></li>
           <li class="card"><span class="num" aria-hidden="true">03</span><h3 data-i18n="s3t">Aplicaciones web a la medida</h3><p data-i18n="s3d">Aplicaciones, portales y paneles hechos a la medida de cómo funciona su negocio.</p></li>
           <li class="card"><span class="num" aria-hidden="true">04</span><h3 data-i18n="s4t">SEO</h3><p data-i18n="s4d">Optimización en buscadores para que los clientes lo encuentren en Google — y para que siga subiendo.</p></li>
@@ -816,14 +803,13 @@
         aiTitle: "AI Integration &amp; Automation",
         aiCopy: "We help you use AI and automation to cut busywork, save time and grow. We find where it will actually pay off, then build it and set it up so your team can use it from day one.",
         aiBullet1: "AI Agents",
-        aiBullet1d: "AI Agents plan, create workflows, use smart tools, and take autonomous actions toward a goal, saving your team time and helping you grow.",
         aiBullet2: "Workflow automation",
         aiBullet3: "CRM and email automation",
         aiBullet4: "AI-powered marketing",
         startAi: "Start with AI",
         supporting: "Supporting services",
         s1t: "AI Integration &amp; Automation",
-        s1d: "AI assistants, workflow automation and smart tools that save your team time and help you grow.",
+        s1d: "AI Agents plan, create workflows, use smart tools, and take autonomous actions toward a goal, saving your team time and helping you grow.",
         s2t: "Websites",
         s2d: "Fast, mobile-first websites that look sharp and help turn visitors into customers.",
         s3t: "Custom Web Apps",
@@ -872,14 +858,13 @@
         aiTitle: "AI Integration &amp; Automation",
         aiCopy: "Le ayudamos a usar AI y la automatización para reducir el trabajo repetitivo, ahorrar tiempo y crecer. Identificamos dónde realmente vale la pena, lo construimos y lo dejamos listo para que su equipo lo use desde el primer día.",
         aiBullet1: "AI Agents",
-        aiBullet1d: "Los AI Agents planifican, crean workflows, usan herramientas inteligentes y toman acciones autónomas hacia una meta, ahorrándole tiempo a su equipo y ayudándole a crecer.",
         aiBullet2: "Workflow automation",
         aiBullet3: "CRM and email automation",
         aiBullet4: "AI-powered marketing",
         startAi: "Empezar con AI",
         supporting: "Otros servicios",
         s1t: "AI Integration &amp; Automation",
-        s1d: "AI assistants, Workflow automation y herramientas inteligentes que le ahorran tiempo a su equipo y le ayudan a crecer.",
+        s1d: "Los AI Agents planifican, crean workflows, usan herramientas inteligentes y toman acciones autónomas hacia una meta, ahorrándole tiempo a su equipo y ayudándole a crecer.",
         s2t: "Web Design",
         s2d: "Sitios rápidos y pensados para el celular, con un diseño nítido que ayuda a convertir visitantes en clientes.",
         s3t: "Aplicaciones web a la medida",
