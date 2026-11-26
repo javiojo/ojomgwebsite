@@ -939,6 +939,10 @@
             <span data-i18n="formMessage">Mensaje</span>
             <textarea name="message" rows="4" required></textarea>
           </label>
+          <label>
+            <span id="verify-label">Verificación: ¿Cuánto es 3 + 4?</span>
+            <input type="text" name="verify" id="verify" inputmode="numeric" autocomplete="off" required>
+          </label>
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
           <button class="btn-send" type="submit" data-i18n="formSend">Enviar mensaje</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
@@ -1032,6 +1036,8 @@
         formSending: "Sending...",
         formThanks: "Thanks! We’ll get back to you soon.",
         formError: "Something went wrong. Opening your email app so you can send the message instead...",
+        formVerify: "Verification: What is {0} + {1}?",
+        formVerifyError: "That answer doesn’t look right. Please try again.",
         formOpt0: "Not sure yet",
         copyright: "&copy; 2026 OjO Marketing Group",
         docTitle: "OjO Marketing Group | AI, Websites and Marketing"
@@ -1103,6 +1109,8 @@
         formSending: "Enviando...",
         formThanks: "¡Gracias! Le responderemos pronto.",
         formError: "Algo salió mal. Abriendo su Email para que pueda enviar el mensaje...",
+        formVerify: "Verificación: ¿Cuánto es {0} + {1}?",
+        formVerifyError: "Esa respuesta no parece correcta. Inténtelo de nuevo.",
         formOpt0: "Todavía no estoy seguro",
         copyright: "&copy; 2026 OjO Marketing Group",
         docTitle: "OjO Marketing Group | AI, Web Design y mercadeo"
@@ -1110,6 +1118,35 @@
     };
 
     var currentLang = "es";
+    var vA = 3, vB = 4;
+    var formReadyAt = Date.now() + 3000;
+
+    function verifyLabelText() {
+      var copy = t[currentLang] || t.es;
+      return copy.formVerify.replace("{0}", String(vA)).replace("{1}", String(vB));
+    }
+
+    function updateVerifyLabel() {
+      var el = document.getElementById("verify-label");
+      if (el) el.textContent = verifyLabelText();
+    }
+
+    function newVerify() {
+      vA = 1 + Math.floor(Math.random() * 9);
+      vB = 1 + Math.floor(Math.random() * 9);
+      updateVerifyLabel();
+      var input = document.getElementById("verify");
+      if (input) input.value = "";
+    }
+
+    function looksLikeSpam(text) {
+      text = String(text || "");
+      var links = text.match(/https?:\/\/|www\./gi);
+      if (links && links.length > 2) return true;
+      if (/[\u0400-\u04FF]/.test(text)) return true;
+      if (/[\u3040-\u30FF\u3400-\u9FFF\uAC00-\uD7AF]/.test(text)) return true;
+      return false;
+    }
 
     function setLang(lang) {
       if (!t[lang]) lang = "es";
@@ -1122,6 +1159,7 @@
       });
       document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
       document.getElementById("btn-es").setAttribute("aria-pressed", lang === "es" ? "true" : "false");
+      updateVerifyLabel();
       var url = new URL(window.location.href);
       if (lang === "es") url.searchParams.delete("lang");
       else url.searchParams.set("lang", lang);
@@ -1134,16 +1172,36 @@
 
     var start = new URLSearchParams(window.location.search).get("lang") || "es";
     setLang(start);
+    newVerify();
 
     var f = document.getElementById("form"), s = document.getElementById("status");
     if (f && s) {
+      f.addEventListener("focusin", function () {
+        formReadyAt = Math.max(formReadyAt, Date.now() + 3000);
+      }, { once: true });
       f.addEventListener("submit", function (e) {
         e.preventDefault();
         var b = f.querySelector("button[type='submit']");
         var copy = t[currentLang] || t.es;
+        var d = new FormData(f);
+        var honey = String(d.get("_honey") || "").trim();
+        var blob = [d.get("name") || "", d.get("message") || "", d.get("phone") || ""].join("\n");
+        if (honey || Date.now() < formReadyAt || looksLikeSpam(blob)) {
+          f.reset();
+          newVerify();
+          s.textContent = copy.formThanks;
+          return;
+        }
+        var guess = parseInt(String(d.get("verify") || "").replace(/\s+/g, ""), 10);
+        if (guess !== vA + vB) {
+          s.textContent = copy.formVerifyError;
+          var vi = document.getElementById("verify");
+          if (vi) vi.focus();
+          return;
+        }
         b.disabled = true;
         s.textContent = copy.formSending;
-        var d = new FormData(f);
+        d.delete("verify");
         if (d.get("email")) d.set("_replyto", d.get("email"));
         fetch(f.action, { method: "POST", body: d, headers: { Accept: "application/json" } })
           .then(function (r) {
@@ -1155,6 +1213,7 @@
           })
           .then(function () {
             f.reset();
+            newVerify();
             s.textContent = copy.formThanks;
           })
           .catch(function () {
